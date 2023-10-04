@@ -1,0 +1,21 @@
+<div class="date">
+    <% const date=new Date();
+        const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        const dayOfWeekNumber = date.getDay();
+        const dayName = daysOfWeek[dayOfWeekNumber];
+        const monthNumber = date.getMonth();
+        const monthName = months[monthNumber];
+        
+        %>
+<h1><%= dayName%>, <%= date.getDate()%> <%= monthName%> <%=date.getFullYear()%></h1>
+</div>
+
+ <div class="add-container">
+  <form  action="/create" method="post">
+     <input type="text" name="item" id="item" placeholder="Add a Task" required>
+        <button id="add-task-btn">
+            <span class="plus-icon">+</span>
+        </button>
+ </form>
+  </div>

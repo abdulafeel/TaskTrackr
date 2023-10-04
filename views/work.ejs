@@ -1,0 +1,20 @@
+<%- include("partials/header.ejs") %>
+<%- include("partials/main.ejs") %>
+<div class="list-container">
+<ul>
+
+<% if (locals.newWorkItems.length>0){ %>
+<%for(var i=0;i<newWorkItems.length;i++){%>
+ <li id="task-list">    
+         <input type="checkbox" name=<%= newWorkItems[i] %> value=<%= newWorkItems[i] %> id=<%= newWorkItems[i] %>  />
+<label for=<%= newWorkItems[i] %>> <%= newWorkItems[i]%></label><br>
+
+    </li>
+     <% } %>    
+    <% }else{ %>
+        <p>No tasks to display at the moment.</p>
+        <% } %>
+</ul>
+</div>
+
+<%- include("partials/footer.ejs") %>
